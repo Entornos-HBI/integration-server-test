@@ -1,9 +1,10 @@
 package es.devtest.mvn;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.jupiter.api.Assumptions.*;
 
 @DisplayName("PROVA CICLE VIDA HECTOR")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -41,6 +42,7 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST ONE EXECUTAT=====");
     }
+
     @DisplayName("Segundo test")
     @RepeatedTest(value = 2, name = "--> {currentRepetition}/{totalRepetitions}")
     void testTwo(){
@@ -117,6 +119,33 @@ public class ProvaCicleVida {
         System.out.println("====TEST TEN EXECUTAT=====");
     }
 
+    @DisplayName("Onceavo test")
+    @RepeatedTest(3)
+    void testEleven(){
+        boolean isServerDown = Math.random()>0.5;
+
+        assumeFalse(isServerDown, "Ignoring test eleven, server is down");
+
+        int resultadoEsperado = 3;
+        assertEquals(resultadoEsperado, 1 + 2);
+
+        System.out.println("====TEST ELEVEN EXECUTAT=====");
+    }
+    private static Executable esCorrecto(){
+        System.out.println("Esta todo correcto");
+        return null;
+    }
+
+    @DisplayName("Doceavo test")
+    @RepeatedTest(3)
+    void testTwelve(){
+        boolean isServerUp = Math.random()>0.5;
+        int resultadoEsperado = 3;
+        assumingThat(isServerUp, esCorrecto());
 
 
+        assertEquals(resultadoEsperado, 1 + 2);
+
+        System.out.println("====TEST TWELVE EXECUTAT=====");
+    }
 }
