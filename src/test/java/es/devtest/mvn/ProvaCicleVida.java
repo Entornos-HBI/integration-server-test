@@ -110,8 +110,9 @@ public class ProvaCicleVida {
     @DisplayName("Decimo test")
     @Test
     void testTen(){
-        int resultadoEsperado = 3;
-        assertEquals(resultadoEsperado, 1 + 2);
+        String valorUno = "3";
+        int valorDos = 3;
+        assertNotSame(valorUno, valorDos, "Ha fallado");
 
         System.out.println("====TEST TEN EXECUTAT=====");
     }
