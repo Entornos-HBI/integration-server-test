@@ -67,28 +67,28 @@ public class ProvaCicleVida {
         System.out.println("====TEST FOUR EXECUTAT=====");
     }
     @DisplayName("Quinto test")
-    @Test
+    @RepeatedTest(3)
     void testFive(){
         int resultadoEsperado = 3;
-        assertEquals(resultadoEsperado, 1 + 2);
+        assertFalse(0.5 >= Math.random());
 
         System.out.println("====TEST FIVE EXECUTAT=====");
     }
     @DisplayName("Sexto test")
     @Test
     void testSix(){
-        int resultadoEsperado = 3;
-        assertEquals(resultadoEsperado, 1 + 2);
+        String resultadoEsperado = null;
+        assertNull(resultadoEsperado);
 
-        System.out.println("====TEST TWO EXECUTAT=====");
+        System.out.println("====TEST SIX EXECUTAT=====");
     }
     @DisplayName("Septimo test")
     @Test
     void testSeven(){
-        int resultadoEsperado = 3;
-        assertEquals(resultadoEsperado, 1 + 2);
+        String resultadoEsperado = null;
+        assertNotNull(resultadoEsperado);
 
-        System.out.println("====TEST TWO EXECUTAT=====");
+        System.out.println("====TEST SEVEN EXECUTAT=====");
     }
     @DisplayName("Octavo test")
     @Test
@@ -96,15 +96,16 @@ public class ProvaCicleVida {
         int resultadoEsperado = 3;
         assertEquals(resultadoEsperado, 1 + 2);
 
-        System.out.println("====TEST TWO EXECUTAT=====");
+        System.out.println("====TEST EIGHT EXECUTAT=====");
     }
     @DisplayName("Noveno test")
     @Test
     void testNine(){
-        int resultadoEsperado = 3;
-        assertEquals(resultadoEsperado, 1 + 2);
+        int valorUno = 3;
+        int valorDos = 3;
+        assertSame(valorUno, valorDos);
 
-        System.out.println("====TEST TWO EXECUTAT=====");
+        System.out.println("====TEST NINE EXECUTAT=====");
     }
     @DisplayName("Decimo test")
     @Test
@@ -112,7 +113,7 @@ public class ProvaCicleVida {
         int resultadoEsperado = 3;
         assertEquals(resultadoEsperado, 1 + 2);
 
-        System.out.println("====TEST TWO EXECUTAT=====");
+        System.out.println("====TEST TEN EXECUTAT=====");
     }
 
 
