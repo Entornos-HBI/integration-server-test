@@ -133,7 +133,12 @@ public class ProvaCicleVida {
     }
     private static Executable esCorrecto(){
         System.out.println("Esta todo correcto");
-        return null;
+        return new Executable() {
+            @Override
+            public void execute() throws Throwable {
+
+            }
+        };
     }
 
     @DisplayName("Doceavo test")
