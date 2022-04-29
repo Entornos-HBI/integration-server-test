@@ -52,14 +52,17 @@ public class ProvaCicleVida {
         System.out.println("====TEST TWO EXECUTAT=====");
     }
 
+    //El test no fallara si los dos valores son distintos
     @DisplayName("Tercer test")
     @Test
     void testThree(){
-        int resultadoEsperado = 3;
+        int resultadoEsperado = 4;
         assertNotEquals(resultadoEsperado, 1 + 2);
 
         System.out.println("====TEST THREE EXECUTAT=====");
     }
+
+    //El test no fallara si, la comparacion es true
     @DisplayName("Cuarto test")
     @RepeatedTest(3)
     void testFour(){
@@ -68,6 +71,8 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST FOUR EXECUTAT=====");
     }
+
+    //El test no fallara si, la comparacion es false
     @DisplayName("Quinto test")
     @RepeatedTest(3)
     void testFive(){
@@ -76,6 +81,7 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST FIVE EXECUTAT=====");
     }
+    //El test no fallara si, el parametro no es null
     @DisplayName("Sexto test")
     @Test
     void testSix(){
@@ -84,6 +90,7 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST SIX EXECUTAT=====");
     }
+    //El test no fallara si, el parametro es null
     @DisplayName("Septimo test")
     @Test
     void testSeven(){
@@ -92,6 +99,7 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST SEVEN EXECUTAT=====");
     }
+    //El test fallara si los dos parametros son distintos
     @DisplayName("Octavo test")
     @Test
     void testEight(){
@@ -100,6 +108,8 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST EIGHT EXECUTAT=====");
     }
+
+    //Igual que el equals, pero tambien compara los tipos de datos
     @DisplayName("Noveno test")
     @Test
     void testNine(){
@@ -109,6 +119,7 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST NINE EXECUTAT=====");
     }
+    //Igual que el Notequals, pero tambien compara los tipos de datos
     @DisplayName("Decimo test")
     @Test
     void testTen(){
@@ -118,7 +129,7 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST TEN EXECUTAT=====");
     }
-
+    //Si la condicion es true, el test fallara
     @DisplayName("Onceavo test")
     @RepeatedTest(3)
     void testEleven(){
@@ -131,16 +142,8 @@ public class ProvaCicleVida {
 
         System.out.println("====TEST ELEVEN EXECUTAT=====");
     }
-    private static Executable esCorrecto(){
-        System.out.println("Esta todo correcto");
-        return new Executable() {
-            @Override
-            public void execute() throws Throwable {
 
-            }
-        };
-    }
-
+    //Si el primer parametro es true, realizara el segundo parametro (ejecutable)
     @DisplayName("Doceavo test")
     @RepeatedTest(3)
     void testTwelve(){
@@ -152,5 +155,14 @@ public class ProvaCicleVida {
         assertEquals(resultadoEsperado, 1 + 2);
 
         System.out.println("====TEST TWELVE EXECUTAT=====");
+    }
+    private static Executable esCorrecto(){
+        System.out.println("Esta todo correcto");
+        return new Executable() {
+            @Override
+            public void execute() throws Throwable {
+
+            }
+        };
     }
 }
