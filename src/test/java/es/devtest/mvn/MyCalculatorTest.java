@@ -51,7 +51,43 @@ class MyCalculatorTest {
     void div() {
         System.out.println("====TEST DIVISION====");
         int expectedResult = 1;
-        int actualResult = myCalculator.div(5, 5);
-        assertEquals(expectedResult, actualResult);
+            int actualResult = myCalculator.div(5, 5);
+            assertEquals(expectedResult, actualResult);
     }
+    @Test
+    void divByZero() {
+        System.out.println("====TEST DIVISION POR 0====");
+            ArithmeticException exception = assertThrows(ArithmeticException.class,() -> myCalculator.div(5,0));
+            assertTrue(exception.getMessage().equals("/ by zero"));
+    }
+    @Test
+    void addWhenNegativeThrowsException(){
+        System.out.println("====TEST SUMA NEGATIVA====");
+        int a = 5;
+        int b = -5;
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,() -> myCalculator.add(a,b));
+    }
+
+    @Test
+    void subWhenNegativeThrowsException(){
+        System.out.println("====TEST RESTA NEGATIVA====");
+        int a = 5;
+        int b = -5;
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,() -> myCalculator.sub(a,b));
+    }
+    @Test
+    void multWhenNegativeThrowsException(){
+        System.out.println("====TEST MULTIPLICACION NEGATIVA====");
+        int a = 5;
+        int b = -5;
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,() -> myCalculator.mult(a,b));
+    }
+    @Test
+    void divWhenNegativeThrowsException(){
+        System.out.println("====TEST DIVISION NEGATIVA====");
+        int a = 5;
+        int b = -5;
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,() -> myCalculator.div(a,b));
+    }
+
 }
