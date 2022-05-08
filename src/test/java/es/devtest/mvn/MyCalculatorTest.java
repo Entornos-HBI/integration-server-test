@@ -2,11 +2,19 @@ package es.devtest.mvn;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MyCalculatorTest {
+
+    /**Respuesta ultima pregunta
+     * El 100% de los metodos esta cubierto, aunque solo el 69% de las lineas lo esta.
+     * Este porcentaje restante de lineas es el respectivo del apartado D de la practica
+     *
+     * En la carpeta resources se adjuntaran las capturas que lo demuestran
+     */
     private MyCalculator myCalculator;
 
     @BeforeEach
@@ -60,6 +68,7 @@ class MyCalculatorTest {
             ArithmeticException exception = assertThrows(ArithmeticException.class,() -> myCalculator.div(5,0));
             assertTrue(exception.getMessage().equals("/ by zero"));
     }
+    @Disabled
     @Test
     void addWhenNegativeThrowsException(){
         System.out.println("====TEST SUMA NEGATIVA====");
@@ -67,7 +76,7 @@ class MyCalculatorTest {
         int b = -5;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,() -> myCalculator.add(a,b));
     }
-
+    @Disabled
     @Test
     void subWhenNegativeThrowsException(){
         System.out.println("====TEST RESTA NEGATIVA====");
@@ -75,6 +84,7 @@ class MyCalculatorTest {
         int b = -5;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,() -> myCalculator.sub(a,b));
     }
+    @Disabled
     @Test
     void multWhenNegativeThrowsException(){
         System.out.println("====TEST MULTIPLICACION NEGATIVA====");
@@ -82,6 +92,7 @@ class MyCalculatorTest {
         int b = -5;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,() -> myCalculator.mult(a,b));
     }
+    @Disabled
     @Test
     void divWhenNegativeThrowsException(){
         System.out.println("====TEST DIVISION NEGATIVA====");
